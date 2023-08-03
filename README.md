@@ -1,24 +1,22 @@
 # Korg MS-20M Extra Midi to CV Module
 Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel and ATouch
 
-
-This is a module that snoops into the Midi in (5-pin socket only, not USB) of the Korg MS-20M (Desktop Kit), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
+This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi socket only, not USB), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
 ![Patch Points Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/0ffb3115-6308-4ab8-9564-1d0f10059a01)
 
-The is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration).
+The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration). The Arduino Nano grabs 12V from the Korg MS-20M, as well as the line level Midi signal, which is snooped from a small solder point under a via in the power board, within the Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB. You can build the module using a 50x70mm perfboard.
 
-The Arduino Nano uses 12V from the Korg MS-20M, as well as a line level Midi signal snooped from the 5 Pin Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB.
+![Module 2](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/c6ece706-2444-47c7-9ba8-75432e0b44dc)
+
+## Internal placement of the module:
+The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. 
+
 
 ## Connections from the MS-20M:
 * Midi In line level (Power Board, I solder on a via, see pictures)
 * 12V (Power Board, relatively easy point on one of the connectors, see pictures)
 * +15V, -15V, Ground (Main PCB, 3 patch points)
-
-You can build the module using a 50*70 mm perfboard (double sided prototype board), and screw terminal blocks;
-
-## Internal placement of the module:
-I use a spot to the left bottom side at the back of the MS-20M, which is fine if you don't use the 4 rubber feet of the MS-20M. If you need the rubber feet, you may need to find another spot for the module since the place I use interferes with one of the 4 feet. I use a small 3D printed part to screw the module one of the bottom screws, as well as some velcro. 
 
 ## Bill of Materials:
 * 1 Arduino Nano v2
