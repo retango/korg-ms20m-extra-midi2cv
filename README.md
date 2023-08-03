@@ -43,7 +43,9 @@ For the 3D printed part:
 * 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing)
 
 ## Arduino Code
-I use two custom libraries. I introduced a change in the standard  [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC.
+
+### Midi Lirary
+I use two custom libraries. I introduced a change in the standard [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC. 
 
 In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), the changes are:
 ```
@@ -55,10 +57,14 @@ to:
 #define MIDI_PITCHBEND_MIN      0
 #define MIDI_PITCHBEND_MAX      16383
 ```
-in the Arduino folder there is a zipper file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
+In the Arduino folder there is a zip file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
+
+### MCP4728 Library
+The code uses [Benoit Schillings' MCP4728 Library](https://github.com/BenoitSchillings/mcp4728), not the official one. In the Arduino folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
+
+for MW, Vel and AT the code uses a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
 
 
-for MW, Vel and AT I use a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
 
 ## Content:
 * Arduino Code
