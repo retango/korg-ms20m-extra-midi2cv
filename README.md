@@ -4,7 +4,8 @@ Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel
 This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi socket only, not USB), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
 ![Patch Points Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/0ffb3115-6308-4ab8-9564-1d0f10059a01)
-<sub>The MS-20M in the pictures also has the VCO2 CV In mod). </sub>
+
+<sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
 The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration). The Arduino Nano grabs 12V from the Korg MS-20M, as well as the line level Midi signal, which is snooped from a small solder point under a via in the power board, within the Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB. You can build the module using a 50x70mm perfboard.
 
@@ -15,7 +16,8 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 
 ![Installed Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/9a7d6f8f-7373-44af-bd53-4b99781515a4)
 ![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/e87fd1f3-65e5-4dec-9cd7-cc31845f85a3)
-<sub>The MS-20M in the pictures also has the VCO2 CV In mod). </sub>
+
+<sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
 ## Connections from the MS-20M:
 * Midi In line level (Power Board, I solder on a via, see pictures)
