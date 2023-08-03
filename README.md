@@ -40,7 +40,7 @@ For the 3D printed part:
 * 2x Brass Threaded Insert Knurled Nuts M2x4x3.2 (I used inserts from [this kit](https://www.ebay.com/itm/305033383223?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=kbyZayRWTpy&sssrc=2047675&ssuid=X02keB-tSR2&widget_ver=artemis&media=COPY))
 * 1x Brass Threaded Insert Knurled Nuts M3x6x5 (see above)
 * 2x M2, 5mm screws
-* 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing)
+* 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing, se picture above)
 
 ## Arduino Code
 
