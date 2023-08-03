@@ -4,6 +4,8 @@ Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel
 
 This is a module that snoops into the Midi in (5-pin socket only, not USB) of the Korg MS-20M (Desktop Kit), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
+![Patch Points Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/0ffb3115-6308-4ab8-9564-1d0f10059a01)
+
 The is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration).
 
 The Arduino Nano uses 12V from the Korg MS-20M, as well as a line level Midi signal snooped from the 5 Pin Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB.
