@@ -37,8 +37,8 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 * 5x screw terminal blocks (2x2P and 3x3P) (see kit above). 
 
 For the 3D printed part:
-* 2x Brass Threaded Insert Nuts M2x4x3.2 (I used inserts from [this kit](https://www.ebay.com/itm/305033383223?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=kbyZayRWTpy&sssrc=2047675&ssuid=X02keB-tSR2&widget_ver=artemis&media=COPY))
-* 1x Brass Threaded Insert Nuts M3x6x5 (see above)
+* 2x Brass Threaded Insert Knurled Nuts M2x4x3.2 (I used inserts from [this kit](https://www.ebay.com/itm/305033383223?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=kbyZayRWTpy&sssrc=2047675&ssuid=X02keB-tSR2&widget_ver=artemis&media=COPY))
+* 1x Brass Threaded Insert Knurled Nuts M3x6x5 (see above)
 * 2x M2, 5mm screws
 * 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing)
 
@@ -62,9 +62,9 @@ for MW, Vel and AT I use a table of DAC values for each of the 128 possible midi
 
 ## Content:
 * Arduino Code
-* STL file for the 3D printed Adapter
-* PDF for the front panel sticker
-* PDF and Kicad Schematic
+* STL and Rhino file for the 3D printed Adapter
+* PDF and Word for the front panel sticker (it uses the News Gothic font, embedded in the Word doc)
+* PDF and Kicad Schematics
 
 ## Useful Links:
 [Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/).
