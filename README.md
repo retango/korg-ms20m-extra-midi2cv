@@ -29,7 +29,7 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 ### Bill of Materials:
 * 1x Arduino Nano
 * 1x MCP 4728 (you can use the [Adafruit MCP4728](https://www.adafruit.com/product/4470). The MCP4728 IC only comes in a tiny form factor (MSOP10) suitable for SMD, not compantible with a perfboard. Alternatively, you can buy the IC and an adapter board. 
-* 1x TL071 OpAmp (comes in DIP8 package, e.g. [TL071IP] (https://mou.sr/45845I1))
+* 1x TL071 OpAmp (comes in DIP8 package, e.g. [TL071IP](https://mou.sr/45845I1))
 * 2x 10K Ohm resistors
 * 1x 0.1uF non polarized capacitor (decoupling capacitor for the MCP4728)
 * 4x TS Audio Jacks (e.g. [ACJM-MN-2](https://mou.sr/3DDrzIO))
