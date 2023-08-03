@@ -12,7 +12,7 @@ The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual su
 <img src="/images/Module.jpeg" alt="Module" width="400">
 
 ### Internal placement of the module:
-The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
+The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the adapter to the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
 
 <img src="/images/Installed Module.jpeg" alt="Installed Module" width="600">
 <img src="/images/Installed Module Zoom.jpeg" alt="Installed Module Zoom" width="400">
