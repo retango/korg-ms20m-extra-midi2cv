@@ -42,9 +42,9 @@ For the 3D printed part:
 * 2x M2, 5mm screws
 
 ## Arduino Code
-I use two custom libraries. I changed slightly the Midi library in the way it handles pitch bend. Instead of providing Pitch Bend values of -xx to xx, with 0 being no pitchbend, the library returns 0 to xx, with xx being 0 Pitch bend. This minor change is to reduce overhead, since I'm sending only positives values to the DAC, and it makes no sense for the Arduino to deduct xx from the midi message, only to add it again to send it to the DAC.
+I use two custom libraries. I introduced a change in the standard  [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC.
 
-In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), you need to change from:
+In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), the changes are:
 ```
 #define MIDI_PITCHBEND_MIN      -8192
 #define MIDI_PITCHBEND_MAX      8191
@@ -54,7 +54,7 @@ to:
 #define MIDI_PITCHBEND_MIN      0
 #define MIDI_PITCHBEND_MAX      16383
 ```
-
+in the Arduino folder there is a zipper file with the modified Midi Library
 
 
 for MW, Vel and AT I use a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
