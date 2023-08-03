@@ -3,7 +3,7 @@ Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel
 
 This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi socket only, not USB), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
-<img src="/images/Patch Points Zoom.jpeg" alt="Patch Points" width="800">
+<img src="/images/Patch Points Zoom.jpeg" alt="Patch Points" width="600">
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
 ## Hardware
@@ -14,7 +14,7 @@ The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual su
 ### Internal placement of the module:
 The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
 
-<img src="/images/Installed Module.jpeg" alt="Patch Points" width="800">
+<img src="/images/Installed Module.jpeg" alt="Patch Points" width="600">
 ![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/dc8de850-9f40-43de-ad03-1d188637e1e9)
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
