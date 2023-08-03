@@ -17,6 +17,7 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 
 ![Installed Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/9a7d6f8f-7373-44af-bd53-4b99781515a4)
 ![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/e87fd1f3-65e5-4dec-9cd7-cc31845f85a3)
+![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/dc8de850-9f40-43de-ad03-1d188637e1e9)
 
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
