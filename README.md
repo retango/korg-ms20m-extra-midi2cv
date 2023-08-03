@@ -10,13 +10,12 @@ This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi
 ## Hardware
 The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration). The Arduino Nano grabs 12V from the Korg MS-20M, as well as the line level Midi signal, which is snooped from a small solder point under a via in the power board, within the Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB. You can build the module using a 50x70mm perfboard.
 
-![Module 2](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/c6ece706-2444-47c7-9ba8-75432e0b44dc)
+![Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/3617b183-0aa1-484e-a357-a874a38fc2c0)
 
 ### Internal placement of the module:
 The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
 
 ![Installed Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/9a7d6f8f-7373-44af-bd53-4b99781515a4)
-![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/e87fd1f3-65e5-4dec-9cd7-cc31845f85a3)
 ![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/dc8de850-9f40-43de-ad03-1d188637e1e9)
 
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
