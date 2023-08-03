@@ -54,7 +54,7 @@ to:
 #define MIDI_PITCHBEND_MIN      0
 #define MIDI_PITCHBEND_MAX      16383
 ```
-in the Arduino folder there is a zipper file with the [Modified Midi Library](/arduino/MIDI_Library_Modified_for_MS20M.zip)
+in the Arduino folder there is a zipper file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
 
 
 for MW, Vel and AT I use a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
