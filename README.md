@@ -14,7 +14,7 @@ The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual su
 ### Internal placement of the module:
 The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
 
-![Installed Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/9a7d6f8f-7373-44af-bd53-4b99781515a4)
+![Installed Module](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/5629634c-718a-46fe-a071-df35d3dbbbf2)
 ![Installed Module Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/dc8de850-9f40-43de-ad03-1d188637e1e9)
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
