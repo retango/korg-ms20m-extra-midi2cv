@@ -44,7 +44,7 @@ For the 3D printed part:
 
 ## Arduino Code
 
-### Midi Lirary
+### Midi Library
 I use two custom libraries. I introduced a change in the standard [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC. 
 
 In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), the changes are:
@@ -60,7 +60,7 @@ to:
 In the Arduino folder there is a zip file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
 
 ### MCP4728 Library
-The code uses [Benoit Schillings' MCP4728 Library](https://github.com/BenoitSchillings/mcp4728), not the official one. In the Arduino folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
+The code uses to  [MCP4728 Library](https://github.com/BenoitSchillings/mcp4728) (by Benoit Schillings), not the official one. In the Arduino folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
 
 ### Main Code
 The main code uses callbacks to process midi messages. For MW, Vel and AT the code creates in the setup section a table of 12bit DAC values for each of the 128 possible midi values. For PB, the code bitshifts by 2 the 14bit Midi PB value in order to get a 12bit DAC value (a fast way of integer dividing by 4).
