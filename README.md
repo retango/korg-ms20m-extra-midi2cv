@@ -44,7 +44,7 @@ For the 3D printed part:
 ## Arduino Code
 I use two custom libraries. I changed slightly the Midi library in the way it handles pitch bend. Instead of providing Pitch Bend values of -xx to xx, with 0 being no pitchbend, the library returns 0 to xx, with xx being 0 Pitch bend. This minor change is to reduce overhead, since I'm sending only positives values to the DAC, and it makes no sense for the Arduino to deduct xx from the midi message, only to add it again to send it to the DAC.
 
-In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file src/midi_Defs.h, you need to change from:
+In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), you need to change from:
 ```
 #define MIDI_PITCHBEND_MIN      -8192
 #define MIDI_PITCHBEND_MAX      8191
