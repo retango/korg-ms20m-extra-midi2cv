@@ -19,7 +19,7 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
 ### Schematic
-![Schematic](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/32c14f4a-8db4-464f-a62d-5a7c29958236)
+<img src="/images/Schematic.png" alt="Schematic" width="600">
 
 ### Connections from the MS-20M:
 * Midi In line level (Power Board, I solder on a via, see pictures)
