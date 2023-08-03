@@ -1,21 +1,22 @@
-# korg-ms20m-extra-midi2cv
-Arduino Nano Midi-to-CV internal module for the Korg MS-20M, get CV for PBend, MWheel, Vel and ATouch
+# Korg MS-20M Extra Midi to CV Module
+Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel and ATouch
 
-This is an Arduino Nano based module that snoops into the Midi in (5-pin socket only, not USB) of the Korg MS-20M (Desktop Kit), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You can add connectors with this 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
-The module requires an Arduino Nano, and MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP outputs directly to the patch points 0 to 5V for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal (differential amplifier configuration).
+This is a module that snoops into the Midi in (5-pin socket only, not USB) of the Korg MS-20M (Desktop Kit), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
-The arduino Nano gets 12V from the Korg MS-20, as well as a line level midi signal snooped from the Midi in circuit. The Arduino supplies regulated, steady 5V for the MCP4728, and for one of the inputs of the OpAmp. The OpAmp gets the dual voltage from the +15V and -15V patch points in the Korg MS-20M main PCB.
+The is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration).
+
+The Arduino Nano uses 12V from the Korg MS-20M, as well as a line level Midi signal snooped from the 5 Pin Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB.
 
 ## Connections from the MS-20M:
-* Midi In line level (Power Board, see pictures)
-* 12V (Power Board, see pictures)
+* Midi In line level (Power Board, I solder on a via, see pictures)
+* 12V (Power Board, relatively easy point on one of the connectors, see pictures)
 * +15V, -15V, Ground (Main PCB, 3 patch points)
 
 You can build the module using a 50*70 mm perfboard (double sided prototype board), and screw terminal blocks;
 
 ## Internal placement of the module:
-I use a spot to the left side of the power board, which works in my case since I'm not using the 4 rubber feet of the MS-20M. Where I placed it, the module interferes with on of the 4 feet, so if you are using them, you may need to find another location. I created a small 3D printed adapter part to fix the module in place, using one of the bottom screws, as well as velcro. 
+I use a spot to the left bottom side at the back of the MS-20M, which is fine if you don't use the 4 rubber feet of the MS-20M. If you need the rubber feet, you may need to find another spot for the module since the place I use interferes with one of the 4 feet. I use a small 3D printed part to screw the module one of the bottom screws, as well as some velcro. 
 
 ## Bill of Materials:
 * 1 Arduino Nano v2
@@ -31,8 +32,15 @@ I use two custom libraries. I changed slightly the Midi library in the way it ha
 
 for MW, Vel and AT I use a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
 
+## Content:
+* Arduino Code
+* STL file for the 3D printed Adapter
+* PDF for the front panel sticker
+* PDF and Kicad Schematic
+
 ## Useful Links:
-[Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/)
+[Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/).
+
 [Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/)
 
 
