@@ -37,9 +37,10 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 * 5x screw terminal blocks (2x2P and 3x3P) (see kit above). 
 
 For the 3D printed part:
-* 2x Brass Threaded Insert Nuts M2x4x3.2
-* 1x Brass Threaded Insert Nuts M3x6x5
+* 2x Brass Threaded Insert Nuts M2x4x3.2 (I used inserts from [this kit](https://www.ebay.com/itm/305033383223?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=kbyZayRWTpy&sssrc=2047675&ssuid=X02keB-tSR2&widget_ver=artemis&media=COPY))
+* 1x Brass Threaded Insert Nuts M3x6x5 (see above)
 * 2x M2, 5mm screws
+* 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing)
 
 ## Arduino Code
 I use two custom libraries. I introduced a change in the standard  [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC.
