@@ -6,6 +6,8 @@ This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi
 ![Patch Points Zoom 2](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/a432b5b6-31b0-4699-9a58-d140a40d34f6)
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
+<img src="/images/IMG_0776.JPG" alt="midi2cv" width="400"> <img src="/images/IMG_0777.JPG" alt="midi2cv" width="400">
+
 ## Hardware
 The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration). The Arduino Nano grabs 12V from the Korg MS-20M, as well as the line level Midi signal, which is snooped from a small solder point under a via in the power board, within the Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB. You can build the module using a 50x70mm perfboard.
 
