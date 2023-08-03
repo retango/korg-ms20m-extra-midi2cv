@@ -3,7 +3,7 @@ Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel
 
 This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi socket only, not USB), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to 5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
 
-![Patch Points Zoom](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/0ffb3115-6308-4ab8-9564-1d0f10059a01)
+![Patch Points Zoom 2](https://github.com/retango/korg-ms20m-extra-midi2cv/assets/62658263/a432b5b6-31b0-4699-9a58-d140a40d34f6)
 
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
 
