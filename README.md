@@ -62,9 +62,8 @@ In the Arduino folder there is a zip file with the [Modified Midi Library](https
 ### MCP4728 Library
 The code uses [Benoit Schillings' MCP4728 Library](https://github.com/BenoitSchillings/mcp4728), not the official one. In the Arduino folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
 
-for MW, Vel and AT the code uses a table of DAC values for each of the 128 possible midi values, and for pitch bend I bitshift 2 to the right the 14bit Midi PB value in order to get a 12bit DAC value (just a fancy but very fast way of integer dividing by 4).
-
-
+### Main Code
+The main code uses callbacks to process midi messages. For MW, Vel and AT the code creates in the setup section a table of 12bit DAC values for each of the 128 possible midi values. For PB, the code bitshifts by 2 the 14bit Midi PB value in order to get a 12bit DAC value (a fast way of integer dividing by 4).
 
 ## Content:
 * Arduino Code
