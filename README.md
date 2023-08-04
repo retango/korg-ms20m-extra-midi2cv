@@ -82,7 +82,5 @@ The main code uses callbacks to process midi messages. For MW, Vel and AT the co
 
 [beatnic.jp Adding mods to MS-20M](http://beatnic.jp/takedanotes/adding-mods-to-ms-20m/). The original VCO2 CV IN Mod
 
-[Another MIDI to CV Box 7 Steps (with Pictures)](https://www.instructables.com/Another-MIDI-to-CV-Box-/). 
-
 [MIDI4CV - Arduino MIDI to 4xCV Interface for VCO Pitch Control](https://www.instructables.com/MIDI4CV-Arduino-MIDI-to-4xCV-Interface-for-VCO-Pit/)
 
