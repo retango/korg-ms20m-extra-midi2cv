@@ -27,6 +27,10 @@ The module can be placed at the bottom side of the back of the MS-20M, in the op
 * Midi In line level (Power Board, I solder on a via, see pictures)
 * 12V (Power Board, relatively easy point on one of the connectors, see pictures)
 * +15V, -15V, Ground (Main PCB, 3 patch points)
+ 
+<img src="/images/Solder Point Midi 1.jpg" alt="Solder Point Midi 1" width="400">
+<img src="/images/Solder Point Midi 2.jpg" alt="Solder Point Midi 2" width="400">
+<img src="/images/Solder Point 12V.jpg" alt="Solder Point 12V" width="400">
 
 ### Bill of Materials
 * 1x Arduino Nano
