@@ -1,7 +1,8 @@
 # Korg MS-20M Extra Midi to CV Module
-Midi-to-CV internal module for the Korg MS-20M, to get CV for PBend, MWheel, Vel and ATouch
+## Intro
+The [Korg MS-20M](https://www.korg.com/us/products/dj/ms_20mkit/) is a desktop module that add many features over the original MS-20, but it also removes two: there is no VCO2 CV IN, nor Control Wheel CV. The VCO2 CV IN mod was done by beatnic.jp (see [this link](http://beatnic.jp/wp/wp-content/uploads/2015/10/MS-20M_Kit_Reconstruction.pdf)). With this module, I solve for the missing control wheel CV, by snooping into the Midi In signal from the 5-pin socket (not USB), and providing CV patch points for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to +5V.
 
-This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi socket only, not USB), and creates CV signals for Pitch Bend (PB), Mod Wheel (MW, CC 1), Velocity (Vel) and Channel Aftertouch (AT). PB CV is -5V to +5V, while MW, Vel and AT CVs are 0V to +5V. You patch these 4 CV signals using 4 of the 14 holes available in the MS-20M.
+Note that with this module, and maybe some minor modifications, you could also program other additions from midi, such as CV out with a different note priority (MS-20M is high note legato priority), 2nd midi  note CV out, multi trigger out instead of legato, etc.
 
 <img src="/images/Patch Points Zoom.jpeg" alt="Patch Points" width="400">
 <sub>The MS-20M in the pictures also has the VCO2 CV In mod.</sub>
@@ -10,6 +11,7 @@ This is a module that snoops into the Midi In of the Korg MS-20M (the 5-pin midi
 The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual supply OpAmp. The MCP4728 outputs directly to the patch points for MW, Vel and AT, and feeds 0 to 5V to the OpAmp for PB. The OpAmp coverts the 0 to 5V signal from the DAC into a -5V to +5V signal for the patch point (OpAmp is in a differential amplifier configuration). The Arduino Nano grabs 12V from the Korg MS-20M, as well as the line level Midi signal, which is snooped from a small solder point under a via in the power board, within the Midi In circuit. The Arduino supplies regulated 5V for the MCP4728, and for one of the inputs of the OpAmp (the circuit requires a relatively precise 5V source, which is provided by the Nano). The OpAmp uses the +15V and -15V patch points in the Korg MS-20M main PCB. You can build the module using a 50x70mm perfboard.
 
 <img src="/images/Module.jpeg" alt="Module" width="400">
+<sub>The module uses different parts than the ones I recommend in the BOM below.</sub>
 
 ### Internal placement of the module:
 The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the adapter to the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
@@ -76,4 +78,5 @@ The main code uses callbacks to process midi messages. For MW, Vel and AT the co
 
 [Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/)
 
+[Mod Wiggler post: Korg MS20M what are the 14 spare holes for?] (https://modwiggler.com/forum/viewtopic.php?t=132096)
 
