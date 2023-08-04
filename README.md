@@ -78,13 +78,13 @@ The main code uses callbacks to process midi messages. For MW, Vel and AT the co
 * PDF and Kicad Schematics
 
 ## Useful Links
-[Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/).
+[Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/), by baritonomarchetto, one of the main shoulders I relied on to build this module.
 
-[Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/)
+[Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/). This one has exactly what I needed, came to it after hours and hours of looking into opamps and how to implement them.
 
-[Mod Wiggler post: Korg MS20M what are the 14 spare holes for?](https://modwiggler.com/forum/viewtopic.php?t=132096). This one has more cool mods.
+[Mod Wiggler post: Korg MS20M what are the 14 spare holes for?](https://modwiggler.com/forum/viewtopic.php?t=132096). This one has more cool mods for the MS-20M.
 
 [beatnic.jp Adding mods to MS-20M](http://beatnic.jp/takedanotes/adding-mods-to-ms-20m/). The original VCO2 CV IN Mod
 
-[MIDI4CV - Arduino MIDI to 4xCV Interface for VCO Pitch Control](https://www.instructables.com/MIDI4CV-Arduino-MIDI-to-4xCV-Interface-for-VCO-Pit/)
+[MIDI4CV - Arduino MIDI to 4xCV Interface for VCO Pitch Control](https://www.instructables.com/MIDI4CV-Arduino-MIDI-to-4xCV-Interface-for-VCO-Pit/). Another one from baritonomarchetto.
 
