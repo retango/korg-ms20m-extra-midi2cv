@@ -58,16 +58,17 @@ to:
 #define MIDI_PITCHBEND_MIN      0
 #define MIDI_PITCHBEND_MAX      16383
 ```
-In the Arduino folder there is a zip file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
+In the 'arduino' folder there is a zip file with the [Modified Midi Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/MIDI_Library_Modified_for_MS20M.zip).
 
 ### MCP4728 Library
-The code uses to  [MCP4728 Library](https://github.com/BenoitSchillings/mcp4728) (by Benoit Schillings), not the official one. In the Arduino folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
+The code uses to  [MCP4728 Library](https://github.com/BenoitSchillings/mcp4728) (by Benoit Schillings), not the official one. In the 'arduino' folder there is a zip file with this [MCP4728 Library](https://github.com/retango/korg-ms20m-extra-midi2cv/raw/main/arduino/mcp4728_for_MS20M.zip).
 
 ### Main Code
 The main code uses callbacks to process midi messages. For MW, Vel and AT the code creates in the setup section a table of 12bit DAC values for each of the 128 possible midi values. For PB, the code bitshifts by 2 the 14bit Midi PB value in order to get a 12bit DAC value (a fast way of integer dividing by 4).
 
 ## Content in this GitHub Project
 * Arduino Code
+* Arduino libraries
 * STL and Rhino file for the 3D printed Adapter
 * PDF and Word for the front panel sticker (it uses the News Gothic font, embedded in the Word doc)
 * PDF and Kicad Schematics
@@ -77,5 +78,11 @@ The main code uses callbacks to process midi messages. For MW, Vel and AT the co
 
 [Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/)
 
-[Mod Wiggler post: Korg MS20M what are the 14 spare holes for?] (https://modwiggler.com/forum/viewtopic.php?t=132096)
+[Mod Wiggler post: Korg MS20M what are the 14 spare holes for?](https://modwiggler.com/forum/viewtopic.php?t=132096). This one has more cool mods.
+
+[beatnic.jp Adding mods to MS-20M](http://beatnic.jp/takedanotes/adding-mods-to-ms-20m/). The original VCO2 CV IN Mod
+
+[Another MIDI to CV Box 7 Steps (with Pictures)](https://www.instructables.com/Another-MIDI-to-CV-Box-/). 
+
+[MIDI4CV - Arduino MIDI to 4xCV Interface for VCO Pitch Control](https://www.instructables.com/MIDI4CV-Arduino-MIDI-to-4xCV-Interface-for-VCO-Pit/)
 
