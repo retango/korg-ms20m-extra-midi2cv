@@ -50,9 +50,9 @@ For the 3D printed part:
 
 ## Arduino Code
 ### Midi Library
-I use two custom libraries. I introduced a change in the standard [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC. 
+I introduced a change in the standard [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This change reduces overhead: the DAC hanldes only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC. 
 
-In the [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h), the changes are:
+The changes are to the [Standard Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), in the file [src/midi_Defs.h](https://github.com/FortySevenEffects/arduino_midi_library/blob/master/src/midi_Defs.h). You need to change from:
 ```
 #define MIDI_PITCHBEND_MIN      -8192
 #define MIDI_PITCHBEND_MAX      8191
