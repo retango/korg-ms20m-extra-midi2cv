@@ -28,8 +28,7 @@ The module can be placed at the bottom side of the back of the MS-20M, in the op
 * 12V (Power Board, relatively easy point on one of the connectors, see pictures)
 * +15V, -15V, Ground (Main PCB, 3 patch points)
  
-<img src="/images/Solder Point Midi 1.jpg" alt="Solder Point Midi 1" height="400">
-<img src="/images/Solder Point Midi 2.jpg" alt="Solder Point Midi 2" width="400">
+<img src="/images/Solder Point Midi 1.jpg" alt="Solder Point Midi 1" height="400"> <img src="/images/Solder Point Midi 2.jpg" alt="Solder Point Midi 2" width="400">
 <img src="/images/Solder Point 12V.jpg" alt="Solder Point 12V" width="400">
 
 ### Bill of Materials
