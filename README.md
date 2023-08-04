@@ -14,7 +14,7 @@ The module is based on an Arduino Nano, an MCP4728 Quad 12bit DAC, and a dual su
 <sub>The module in the picture uses different parts than the ones I recommend in the BOM below.</sub>
 
 ### Internal placement of the module:
-The module can be placed at the left bottom side of the back of the MS-20M. This location interferes with one of the rubber feet, so if you use the rubber feet you might need to change the location or find another way to attach on of them. I use a 3D printed part to screw the module to one of the bottom holes, which together with a strip of velcro leaves the module fixed inside the MS-20M. You need to insert 2 M2 brass threaded inserts into the 3D printed part to screw the adapter to the perfboard, and and additional M3 brass threaded insert that attaches to one of the bottom M3 screws of the MS-20M.
+The module can be placed at the bottom side of the back of the MS-20M, in the opposite side of the power connector. This placement interferes with one of the screws of a rubber foott, so if you use the rubber feet you might need to change the location of the module or find a way to attach the rubber foot without a screw. I used a 3D printed part to screw the module to one of the bottom screws of the MS-20M, whichand together with some velcro, the module can be fixed hidden inside the MS-20M.
 
 <img src="/images/Installed Module.jpeg" alt="Installed Module" width="600">
 <img src="/images/Installed Module Zoom.jpeg" alt="Installed Module Zoom" width="400">
@@ -28,7 +28,7 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 * 12V (Power Board, relatively easy point on one of the connectors, see pictures)
 * +15V, -15V, Ground (Main PCB, 3 patch points)
 
-### Bill of Materials:
+### Bill of Materials
 * 1x Arduino Nano
 * 1x MCP 4728 (you can use the [Adafruit MCP4728](https://www.adafruit.com/product/4470). The MCP4728 IC only comes in a tiny form factor (MSOP10) suitable for SMD, not compantible with a perfboard. Alternatively, you can buy the IC and an adapter board. 
 * 1x TL071 OpAmp (comes in DIP8 package, e.g. [TL071IP](https://mou.sr/45845I1))
@@ -41,11 +41,10 @@ The module can be placed at the left bottom side of the back of the MS-20M. This
 For the 3D printed part:
 * 2x Brass Threaded Insert Knurled Nuts M2x4x3.2 (I used inserts from [this kit](https://www.ebay.com/itm/305033383223?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=kbyZayRWTpy&sssrc=2047675&ssuid=X02keB-tSR2&widget_ver=artemis&media=COPY))
 * 1x Brass Threaded Insert Knurled Nuts M3x6x5 (see above)
-* 2x M2, 5mm screws
+* 2x M2, 5mm screws (used to screw the perfboard to the adapter)
 * 2x Velcro Strips (I used [Command Medium Picture Hanging Strips](https://a.co/d/0iIXbFK), one on the 3D printed part, and one inside the MS-20M casing, se picture above)
 
 ## Arduino Code
-
 ### Midi Library
 I use two custom libraries. I introduced a change in the standard [Arduino Midi Library](https://github.com/FortySevenEffects/arduino_midi_library), that modifies the way it handles Pitch Bend data. Instead of providing Pitch Bend values of -8192 to 8192, with 0 being no Pitch Bend, the modified library provides values from 0 to 16383, with 8192 being no Pitch Bend. This minor change reduces overhead, since the DAC receives only positives values, and it makes no sense for the Arduino to deduct 8192 from the Pitch Bend midi message only to add it again before sending it to the DAC. 
 
@@ -67,13 +66,13 @@ The code uses to  [MCP4728 Library](https://github.com/BenoitSchillings/mcp4728)
 ### Main Code
 The main code uses callbacks to process midi messages. For MW, Vel and AT the code creates in the setup section a table of 12bit DAC values for each of the 128 possible midi values. For PB, the code bitshifts by 2 the 14bit Midi PB value in order to get a 12bit DAC value (a fast way of integer dividing by 4).
 
-## Content:
+## Content in this GitHub Project
 * Arduino Code
 * STL and Rhino file for the 3D printed Adapter
 * PDF and Word for the front panel sticker (it uses the News Gothic font, embedded in the Word doc)
 * PDF and Kicad Schematics
 
-## Useful Links:
+## Useful Links
 [Design a Unipolar to Bipolar Converter for a Unipolar Voltage Output DAC](https://masteringelectronicsdesign.com/design-a-unipolar-to-bipolar-converter-for-a-unipolar-voltage-output-dac/).
 
 [Another MIDI to CV Box 7 Steps](https://www.instructables.com/Another-MIDI-to-CV-Box-/)
